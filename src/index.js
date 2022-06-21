@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 
 const app = new express();
 const hostname = process.env.HOSTNAME;
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const uri = process.env.URI;
 
