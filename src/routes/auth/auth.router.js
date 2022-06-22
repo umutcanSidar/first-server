@@ -62,13 +62,14 @@ const route = () => {
   });
 
   router.route('/create').post((req, res) => {
-    const { username, password, email } = req.body;
+    const { username, password, email, name } = req.body;
 
     User.findOne({ username: username }).then((user) => {
       if (!user) {
         const newUser = new User({
           username: username,
           email: email,
+          name: name,
           password: crypto
             .Hmac('sha256', config.APIPASSKEY)
             .update(password)
